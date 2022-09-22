@@ -1,1 +1,32 @@
-<p>busqueda works!</p>
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Bienvenidxs</h1>
+        <p>Buscador comunal para buscar y añadir películas que se estrenaron en pantalla grande.</p>
+        <app-tabla-peliculas [listadoPeliculas]="peliculas" (onPeliculaSelccionada)="mostrarDetallePelicula($event)"></app-tabla-peliculas>
+      </div>
+    </div>
+    
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Peliculas</h2>
+          <p>Encontrá y agregá todas las películas emitidas en el cine.</p>
+          <p><a class="btn btn-secondary" routerLink="peliculas" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+          <h2>Actores</h2>
+          <p>Encontrá y agregá los actores de todos los tiempos.</p>
+          <p><a class="btn btn-secondary" routerLink="actor" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    
+      <hr>
+    
+    </div> <!-- /container -->
+    
+    </main>
+    

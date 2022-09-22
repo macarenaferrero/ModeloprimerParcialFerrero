@@ -8,16 +8,20 @@ import { PeliculasModule } from './Modulos/peliculas/peliculas.module';
 import { BusquedaComponent } from './Vistas/busqueda/busqueda.component';
 import { ErrorComponent } from './Vistas/error/error.component';
 import { BienvenidoComponent } from './Vistas/bienvenido/bienvenido.component';
+import { TablaPeliculasComponent } from './Vistas/tabla-peliculas/tabla-peliculas.component';
 @NgModule({
   declarations: [
     AppComponent,
     BusquedaComponent,
     ErrorComponent,
-    BienvenidoComponent
+    BienvenidoComponent,
+    TablaPeliculasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ActorModule,
+    PeliculasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
