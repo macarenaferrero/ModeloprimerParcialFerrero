@@ -1,1 +1,22 @@
-<p>tabla-pelicula works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pelicula</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Fecha Estreno</th>
+        <th scope="col">Cantidad Publico</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let itempelicula of listadoPeliculas">
+        <td>{{itempelicula.nombre}}</td>
+        <td><img width="80 px" [src]="itempelicula.foto_pelicula"></td>
+        <td>{{itempelicula.tipo}}</td>
+        <td>{{itempelicula.fecha_estreno}}</td>
+        <td>{{itempelicula.cantidad_publico}}</td>
+        <td><button type="button" class="btn btn-outline-success" (click)="mostrarDetallePelicula(itempelicula)">Seleccionar</button></td>  <!-- Detalle -->
+      </tr>
+    </tbody>
+  </table>

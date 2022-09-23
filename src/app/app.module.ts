@@ -8,13 +8,15 @@ import { PeliculasModule } from './Modulos/peliculas/peliculas.module';
 import { BusquedaComponent } from './Vistas/busqueda/busqueda.component';
 import { ErrorComponent } from './Vistas/error/error.component';
 import { BienvenidoComponent } from './Vistas/bienvenido/bienvenido.component';
-import { TablaPeliculasComponent } from './Vistas/tabla-peliculas/tabla-peliculas.component';
+import { BorrarPeliculaComponent } from './Modulos/peliculas/Vistas/borrar-pelicula/borrar-pelicula.component';
+import { TablaPeliculasComponent } from './Modulos/peliculas/Vistas/tabla-pelicula/tabla-pelicula.component';
 @NgModule({
   declarations: [
     AppComponent,
     BusquedaComponent,
     ErrorComponent,
     BienvenidoComponent,
+    BorrarPeliculaComponent,
     TablaPeliculasComponent
   ],
   imports: [

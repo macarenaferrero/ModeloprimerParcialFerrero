@@ -5,7 +5,8 @@
       <div class="container">
         <h1 class="display-3">Bienvenidxs</h1>
         <p>Buscador comunal para buscar y añadir películas que se estrenaron en pantalla grande.</p>
-        <app-tabla-peliculas [listadoPeliculas]="peliculas" (onPeliculaSelccionada)="mostrarDetallePelicula($event)"></app-tabla-peliculas>
+        <app-tabla-pelicula [listadoPeliculas]="peliculas" (onPeliculaSelccionada)="mostrarDetallePelicula($event)"></app-tabla-pelicula>
+      
       </div>
     </div>
     
@@ -13,9 +14,7 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-6">
-          <h2>Peliculas</h2>
-          <p>Encontrá y agregá todas las películas emitidas en el cine.</p>
-          <p><a class="btn btn-secondary" routerLink="peliculas" role="button">View details &raquo;</a></p>
+          <app-borrar-pelicula  [peliculaDetalle]="peliculaDetalle" (onPeliculaABorrar)="PeliculaABorrar($event)" ></app-borrar-pelicula>
         </div>
         <div class="col-md-6">
           <h2>Actores</h2>

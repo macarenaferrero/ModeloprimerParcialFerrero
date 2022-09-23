@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/Entidades/pelicula';
-import { TablaPeliculaComponent } from 'src/app/Modulos/peliculas/Vistas/tabla-pelicula/tabla-pelicula.component';
+import { TablaPeliculasComponent } from 'src/app/Modulos/peliculas/Vistas/tabla-pelicula/tabla-pelicula.component';
 import { enumTipoPeliculas } from 'src/app/utils/enumTipoPelicula';
 
 @Component({
@@ -16,19 +16,27 @@ export class BusquedaComponent implements OnInit {
     {id: 4, nombre: '1917', tipo: enumTipoPeliculas.PelicularTerror, fecha_estreno:'21/05/2010', cantidad_publico:1089, foto_pelicula:'https://es.web.img3.acsta.net/pictures/20/01/09/15/10/0234685.jpg'}
 
   ];
+  
   peliculaDetalle?:Pelicula;
-
 
   constructor() { }
 
   ngOnInit(): void {
-    declarations: [
-      TablaPeliculaComponent
-    ]
   }
 
   mostrarDetallePelicula(peliculaRecibida:Pelicula){
     this.peliculaDetalle= peliculaRecibida;
   }
 
+  PeliculaABorrar(pelicula:Pelicula){
+    const ressult = this.peliculas.filter((obj) => {
+      return obj.id != pelicula.id;
+    })
+    this.peliculas = ressult;
+    console.log(pelicula);
+    console.log("lo borra");
+    console.log(this.peliculas);
+
+    console.log('Resultado ',ressult);
+  }
 }
