@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'peliculas', loadChildren:()=>import('./Modulos/peliculas/peliculas.module').then(m => PeliculasModule)},
   {path: 'actor', loadChildren:()=>import('./Modulos/actor/actor.module').then(m => ActorModule)},
   {path:'busqueda',component:BusquedaComponent},
-  {path: '', redirectTo:'/bienvenido',pathMatch:'full'}, 
+  {path: '', redirectTo:'/bienvenido',pathMatch:'full'},
   {path:'**',component:ErrorComponent}
 ];
 

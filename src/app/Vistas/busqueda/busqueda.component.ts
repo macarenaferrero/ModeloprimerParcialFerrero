@@ -28,7 +28,7 @@ export class BusquedaComponent implements OnInit {
     this.peliculaDetalle= peliculaRecibida;
   }
 
-  PeliculaABorrar(pelicula:Pelicula){
+  peliculaABorrar(pelicula:Pelicula){
     const ressult = this.peliculas.filter((obj) => {
       return obj.id != pelicula.id;
     })
@@ -39,4 +39,5 @@ export class BusquedaComponent implements OnInit {
 
     console.log('Resultado ',ressult);
   }
+  
 }

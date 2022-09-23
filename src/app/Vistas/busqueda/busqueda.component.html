@@ -13,13 +13,14 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-6">
-          <app-borrar-pelicula  [peliculaDetalle]="peliculaDetalle" (onPeliculaABorrar)="PeliculaABorrar($event)" ></app-borrar-pelicula>
+        <div class="col-md-4">
+          <app-borrar-pelicula  [peliculaDetalle]="peliculaDetalle" (onPeliculaABorrar)="peliculaABorrar($event)" ></app-borrar-pelicula>
         </div>
-        <div class="col-md-6">
-          <h2>Actores</h2>
-          <p>Encontrá y agregá los actores de todos los tiempos.</p>
-          <p><a class="btn btn-secondary" routerLink="actor" role="button">View details &raquo;</a></p>
+        <div class="col-md-4">
+          <app-detalle-pelicula [peliculaDetalle]="peliculaDetalle"></app-detalle-pelicula>
+        </div>
+        <div class="col-md-4">
+          <app-modificar-pelicula [peliculaDetalle]="peliculaDetalle"></app-modificar-pelicula>
         </div>
       </div>
     

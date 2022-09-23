@@ -16,6 +16,14 @@ export class BorrarPeliculaComponent implements OnInit {
   ngOnInit(): void {
   }
   BorrarPelicula(pelicula:Pelicula){
+    if(this.peliculaDetalle != undefined){
+      this.peliculaDetalle.cantidad_publico = undefined;
+      this.peliculaDetalle.foto_pelicula = "";
+      this.peliculaDetalle.nombre = "";
+      this.peliculaDetalle.fecha_estreno = "";
+      this.peliculaDetalle.id= undefined;
+      this.peliculaDetalle.tipo = undefined;
+    }
     this.onPeliculaABorrar.emit(pelicula);
   }
 }

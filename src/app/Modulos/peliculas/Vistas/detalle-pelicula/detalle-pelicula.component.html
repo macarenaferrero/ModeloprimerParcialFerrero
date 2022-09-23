@@ -1,0 +1,13 @@
+<h2>Detalle Película</h2>
+<div class="col-md-8">
+   <strong><h3>{{peliculaDetalle!.nombre}} </h3></strong>
+   <span>Genero: {{peliculaDetalle!.tipo}} </span> 
+   <br>
+   <br>
+   <img [src]="peliculaDetalle!.foto_pelicula" width="100px">
+   <br>
+   <br>
+   <p>Publico: {{peliculaDetalle!.cantidad_publico}} </p>
+   <p>Estreno: {{peliculaDetalle!.fecha_estreno}} </p>
+    <p><a class="btn btn-secondary" (click)="limpiar()"  role="button">Limpiar campos</a></p>
+</div>
