@@ -5,9 +5,9 @@ import { ActorListadoComponent } from './Vistas/actor-listado/actor-listado.comp
 import { AltaActorComponent } from './Vistas/alta-actor/alta-actor.component';
 
 const routes: Routes = [
-  { path: '',component:ActorComponent}
+  { path: '',component:ActorComponent},
       // {path:'listado',component:ActorListadoComponent},
-      // {path:'alta',component:AltaActorComponent},
+      {path:'alta',component:AltaActorComponent},
       // {path:'**', redirectTo:"listado"}   
   
 ];

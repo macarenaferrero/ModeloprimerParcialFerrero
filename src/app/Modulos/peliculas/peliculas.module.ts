@@ -5,7 +5,7 @@ import { PeliculasRoutingModule } from './peliculas-routing.module';
 import { PeliculasComponent } from './peliculas.component';
 import { AltaPeliculaComponent } from 'src/app/Modulos/peliculas/Vistas/alta-pelicula/alta-pelicula.component';
 import { PeliculaListadoComponent } from 'src/app/Modulos/peliculas/Vistas/pelicula-listado/pelicula-listado.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     PeliculasRoutingModule,
     FormsModule,
-    ReactiveFormsModule
   ],
   exports:[
-    ReactiveFormsModule
   ]
 })
 export class PeliculasModule { }

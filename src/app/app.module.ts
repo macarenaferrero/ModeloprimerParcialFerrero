@@ -12,6 +12,10 @@ import { BorrarPeliculaComponent } from './Modulos/peliculas/Vistas/borrar-pelic
 import { TablaPeliculasComponent } from './Modulos/peliculas/Vistas/tabla-pelicula/tabla-pelicula.component';
 import { DetallePeliculaComponent } from './Modulos/peliculas/Vistas/detalle-pelicula/detalle-pelicula.component';
 import { ModificarPeliculaComponent } from './Modulos/peliculas/Vistas/modificar-pelicula/modificar-pelicula.component';
+import { FormsModule } from '@angular/forms';
+import { PaisesComponent } from './Vistas/paises/paises.component';
+import { PaisesService } from './Servicios/Paises/paises.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +31,10 @@ import { ModificarPeliculaComponent } from './Modulos/peliculas/Vistas/modificar
     BrowserModule,
     AppRoutingModule,
     ActorModule,
-    PeliculasModule
+    PeliculasModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [PaisesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/Entidades/pelicula';
-import { TablaPeliculasComponent } from 'src/app/Modulos/peliculas/Vistas/tabla-pelicula/tabla-pelicula.component';
 import { enumTipoPeliculas } from 'src/app/utils/enumTipoPelicula';
 
 @Component({
@@ -18,6 +17,7 @@ export class BusquedaComponent implements OnInit {
   ];
   
   peliculaDetalle?:Pelicula;
+  elent:boolean = false;
 
   constructor() { }
 
@@ -26,18 +26,37 @@ export class BusquedaComponent implements OnInit {
 
   mostrarDetallePelicula(peliculaRecibida:Pelicula){
     this.peliculaDetalle= peliculaRecibida;
+    this.elent = true;
   }
 
-  peliculaABorrar(pelicula:Pelicula){
-    const ressult = this.peliculas.filter((obj) => {
+  peliculaAVer(){
+    this.elent = false;
+  }
+
+  peliculaABorrar(pelicula:Pelicula){   
+    const result = this.peliculas.filter((obj) => {
       return obj.id != pelicula.id;
     })
-    this.peliculas = ressult;
+    
+    this.peliculas = result;
+    this.elent = false;
+    //verifico los datos por consola
     console.log(pelicula);
     console.log("lo borra");
     console.log(this.peliculas);
+    console.log('Resultado ',result);
+  }
 
-    console.log('Resultado ',ressult);
+  peliculaAModificar(pelicula:Pelicula){
+   this.peliculas.forEach(element => {
+      if (element.id === pelicula.id) {
+          element.nombre === pelicula.nombre;
+          element.cantidad_publico === pelicula.cantidad_publico;
+          element.fecha_estreno === pelicula.fecha_estreno;
+          element.tipo === pelicula.tipo;
+      }
+    });
+    this.elent = false;
   }
   
 }

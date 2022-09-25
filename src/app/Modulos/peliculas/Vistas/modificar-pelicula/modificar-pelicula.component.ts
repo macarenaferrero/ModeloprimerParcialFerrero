@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Pelicula } from 'src/app/Entidades/pelicula';
 import { enumTipoPeliculas } from 'src/app/utils/enumTipoPelicula';
 
@@ -10,27 +9,17 @@ import { enumTipoPeliculas } from 'src/app/utils/enumTipoPelicula';
 })
 export class ModificarPeliculaComponent implements OnInit {
 
-  @Input() peliculaDetalle?:Pelicula;
+  @Input() peliculaDetalle:any | Pelicula;
   @Output() onPeliculaAModificar:EventEmitter<Pelicula>= new EventEmitter();
-
-  formModificar:FormGroup;
+  nuevaPelicula = Pelicula;
+  
   public opcionestipos = Object.values(enumTipoPeliculas);
-  constructor(private fb:FormBuilder) { 
-    this.formModificar = fb.group({
-      nombre:[""],
-      estreno:[""],
-      publico:[""],
-      tipo:[""],
-      })
+  constructor() { 
+   
   }
   ngOnInit(): void {
   }
-  modificarPelicula(peliculaAEditar:Pelicula){
-    if(peliculaAEditar != undefined){
-      peliculaAEditar.cantidad_publico = this.formModificar.value.cantidad_publico;
-      peliculaAEditar.nombre = this.formModificar.value.nombre;
-      peliculaAEditar.fecha_estreno = this.formModificar.value.fecha_estreno;
-      peliculaAEditar.tipo = this.formModificar.value.tipo;
-    }
+  modificarPelicula(peliculaModificada:Pelicula){
+    this.onPeliculaAModificar.emit(peliculaModificada);
   }
 }
